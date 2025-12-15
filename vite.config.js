@@ -4,6 +4,14 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   plugins: [tailwindcss()],
+  server:{
+    proxy:{
+      "/api":{
+        target:"http://localhost:7000",
+        changeOrigin:true
+      }
+    }
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),

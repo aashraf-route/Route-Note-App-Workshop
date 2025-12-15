@@ -42,11 +42,12 @@ export const setAttributes = (element, attributes) => {
  */
 export const generateElement = function ({
   tagName = "div",
-  classes = "",
-  text = "",
-  html = "",
+  classes,
+  text,
+  html ,
   attributes = {},
 }) {
+
   // 1- craete element
   const element = document.createElement(tagName);
 
@@ -68,7 +69,6 @@ export const generateElement = function ({
   }
 
   // 5- Set Attributes
-
   if (Object.keys(attributes).length) {
     setAttributes(element, attributes);
   }
